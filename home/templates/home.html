@@ -6,22 +6,24 @@
 
     <form id="searchForm" method="GET">
 		<fieldset>
-           	<input id="s" type="text" value={{url}}/>
+           	<input id="s" type="text" name="url" value="{{url}}" />
             <br class="clear"/>
             <br class="clear"/>
             <input type="submit" value="Sniff" id="submitButton" />
         </fieldset>
     </form>
-
+    <div class="clear"> </div>
+    <div class="result">
+            {% if site_type %}
+                Content is of type :{{site_type}}
+            {% endif %}
+    </div>
+    <br class="clear"/>
     <div id="resultsDiv">
         <div class="alert-circle"> </div>
         <div class="warning-circle"> </div>
         <div class="info-circle"> </div>
     </div>
-    <div class="clear">
-            {% if site_type %}
-                Content is of type :{{site_type}}
-            {% endif %}
-    </div>
+
 </div>
 {% endblock %}
