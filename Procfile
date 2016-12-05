@@ -1,1 +1,1 @@
-web: gunicorn indiapost.wsgi --log-file -
+web: gunicorn spifoo.wsgi --log-file -
