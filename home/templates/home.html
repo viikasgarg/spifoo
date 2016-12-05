@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block body %}
+<div id="page">
+
+    <h1>s n i f o o</h1>
+
+    <form id="searchForm" method="post">
+		<fieldset>
+           	<input id="s" type="text" value={{url}}/>
+            <br class="clear"/>
+            <br class="clear"/>
+            <input type="submit" value="Sniff" id="submitButton" />
+
+
+        </fieldset>
+    </form>
+
+    <div id="resultsDiv">
+        <div class="alert-circle"> </div>
+        <div class="warning-circle"> </div>
+        <div class="info-circle"> </div>
+    </div>
+    <div> {{site_type}}
+    </div>
+</div>
+{% endblock %}
