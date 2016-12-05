@@ -106,3 +106,13 @@ STATIC_URL = '/static/'
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 STATIC_ROOT = 'staticfiles/'
+
+DATA = {}
+import json
+try:
+    with open("data.json") as fl:
+        data = json.loads(fl.read())
+        for d in data:
+            DATA[d.get('url')] = d.get('type')
+except:
+    pass
