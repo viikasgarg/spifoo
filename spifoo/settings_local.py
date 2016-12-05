@@ -105,8 +105,18 @@ STATIC_URL = '/static/'
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-#STATIC_ROOT = 'staticfiles/'
+STATIC_ROOT = 'staticfiles/'
+# Additional locations of static files
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 
+# List of finder classes that know how to find static files in
+# various locations.
+# STATICFILES_FINDERS = [
+#     "django.contrib.staticfiles.finders.FileSystemFinder",
+#     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+# ]
 DATA = {}
 import json
 try:
