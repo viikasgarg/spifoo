@@ -4,13 +4,13 @@ from django.conf import settings
 
 
 def home(request, *args, **kwargs):
-    url = request.GET.get('url', '')
+    msg = request.GET.get('msg', '')
     site_type = ''
-    _url = url.split("//")[-1].split("/")[0]
-    if url:
-        site_type = settings.DATA.get(_url, "unknown")
+
+    if msg:
+        site_type = settings.DATA.get(msg, "unknown")
 
     return render(request, "home.html",
-                  {'url': url,
+                  {'msg': msg,
                    'site_type': site_type
                    })
